@@ -5,5 +5,9 @@ require 'service_error'
 class ServiceCaller
   include ServiceExtend::Callable
   extend ServiceExtend::Callable::ClassMethods
-  prepend ServiceExtend::Handler
+
+  def self.inherited(child_class)
+    child_class.prepend(ServiceExtend::Handler)
+    super
+  end
 end
