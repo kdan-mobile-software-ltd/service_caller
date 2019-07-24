@@ -1,9 +1,8 @@
-require 'service_caller/base'
-require 'service_caller/error'
-require 'service_caller/handler'
+require 'service_extend/callable'
+require 'service_extend/handler'
 
 class ServiceCaller
-  include Base
-  extend Base::ClassMethods
-  prepend Handler
+  include ServiceExtend::Callable
+  extend ServiceExtend::Callable::ClassMethods
+  prepend ServiceExtend::Handler
 end

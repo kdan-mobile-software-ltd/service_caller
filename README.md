@@ -1,9 +1,9 @@
 # Service Caller
 
 ### How to Use
-* define service & inherit from `ServiceCaller`
+* define service & inherit from `ServiceCaller::Base`
 ```ruby
-class [Custom Service] < ServiceCaller
+class [Custom Service] < ServiceCaller::Base
   def initialize(*args)
     ...
   end

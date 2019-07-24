@@ -1,4 +1,4 @@
-module ServiceCaller
+module ServiceExtend
   module Handler
     def call
       super

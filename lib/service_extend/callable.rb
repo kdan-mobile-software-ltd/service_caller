@@ -1,5 +1,5 @@
-module ServiceCaller
-  module Base
+module ServiceExtend
+  module Callable
     attr_reader :error, :result
 
     module ClassMethods
