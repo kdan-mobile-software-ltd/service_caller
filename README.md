@@ -1,9 +1,19 @@
 # Service Caller
 
 ### How to Use
-* define service & inherit from `ServiceCaller::Base`
+* install gem
+```
+gem install service_caller-0.1.0.gem
+```
+
+* require gem
 ```ruby
-class [Custom Service] < ServiceCaller::Base
+require 'service_caller'
+```
+
+* define service & inherit from `ServiceCaller`
+```ruby
+class [Custom Service] < ServiceCaller
   def initialize(*args)
     ...
   end
