@@ -1,5 +1,5 @@
 require 'service_caller/base'
-require 'service_caller/exception'
+require 'service_caller/error'
 require 'service_caller/handler'
 
 class ServiceCaller

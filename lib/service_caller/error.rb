@@ -1,5 +1,5 @@
 module ServiceCaller
-  class ServiceError < StandardError
+  class Error < StandardError
     attr_reader :code
 
     class << self
