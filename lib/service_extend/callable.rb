@@ -11,7 +11,7 @@ module ServiceExtend
     end
 
     def success?
-      error.nil? || error.empty?
+      error.nil?
     end
 
     def failed?
