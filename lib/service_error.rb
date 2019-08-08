@@ -7,6 +7,10 @@ class ServiceError < StandardError
       service_err.set_backtrace(exception.backtrace)
       service_err
     end
+
+    def generate_from_hash(error_hash)
+      new(error_hash[:error_code], error_hash[:error_message])
+    end
   end
 
   def initialize(code, message)
