@@ -11,6 +11,6 @@ class ServiceError < StandardError
 
   def initialize(key, message=nil)
     @key = key
-    super(message)
+    super(message || key)
   end
 end
