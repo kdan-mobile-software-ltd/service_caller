@@ -8,7 +8,7 @@ module ServiceExtend
         rescue ServiceError => e
           @error = e
         rescue ActiveRecord::RecordNotFound => e
-          @error = ServiceError.new(:record_not_found, e.message)
+          @error = ServiceError.new(:record_not_found, error_msg: e.message)
           @error.set_backtrace(e.backtrace)
         rescue Exception => e
           @error = ServiceError.generate_from_exception(e)
