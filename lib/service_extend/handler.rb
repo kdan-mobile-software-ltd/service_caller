@@ -2,7 +2,7 @@ module ServiceExtend
   module Handler
 
     def call
-      if defined?(::Rails::Engine)
+      if defined?(::Rails::Engine) && defined?(::ActiveRecord)
         begin
           super
         rescue ServiceError => e
