@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'service_caller'
-  s.version     = '1.0.6'
+  s.version     = '1.0.7'
   s.platform    = Gem::Platform::RUBY
   s.summary     = 'Ruby Service Basic Class'
   s.description = 'basic implement of service object'

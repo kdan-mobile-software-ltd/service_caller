@@ -14,7 +14,8 @@ class ServiceError < StandardError
 
   def initialize(key, error_obj={})
     @key = key
+    error_msg = error_obj.delete(:error_msg) || key
     @error_obj = error_obj
-    super(error_obj[:error_msg] || key)
+    super(error_msg)
   end
 end
