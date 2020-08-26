@@ -4,7 +4,7 @@ class ServiceError < StandardError
 
   class << self
     def generate_from_exception(exception, append_info={})
-      error_obj = {error_msg: "#{exception.class.name}: #{exception.message}"}
+      error_obj = {error_message: "#{exception.class.name}: #{exception.message}"}
       error_obj.merge!(append_info)
       service_err = new(:internal_error, error_obj)
       service_err.set_backtrace(exception.backtrace)
@@ -14,8 +14,8 @@ class ServiceError < StandardError
 
   def initialize(key, error_obj={})
     @key = key
-    error_msg = error_obj.delete(:error_msg) || key
+    error_message = error_obj.delete(:error_message) || key
     @error_obj = error_obj
-    super(error_msg)
+    super(error_message)
   end
 end
