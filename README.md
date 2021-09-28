@@ -77,7 +77,7 @@ end
 ### Examples
 
 ``` ruby
-class Cal_Bmi < ServiceCaller
+class CalBmi < ServiceCaller
   def initialize(member_name='william', height: 1.55, weight: 52)
     @member_name = member_name
     @height = height
