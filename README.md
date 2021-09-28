@@ -1,23 +1,34 @@
 # Service Caller
 
-## How to Use
-* install gem
+## Installation
+1. Add `service_caller` in your app's `Gemfile`.
+
+``` ruby
+# ruby version is 2.7 or 3
+gem 'service_caller', '~> 1.2.0'
+```
+
+2. Then, in your project directory.
+
 ``` bash
-gem install service_caller-1.2.0.gem
+# Download and install
+$ bundle install
 ```
 
-## Require Gem
-```ruby
-require 'service_caller'
+## Upgrading
+
+If your project is already using an older version of service_caller, upgrade to the latest version with:
+
+``` bash
+$ bundle update service_caller
 ```
 
-## Support of Ruby Version
+## Support of Ruby and Rails Version
 
-| Ruby Version | Service Caller Version |
-| - | - |
-| 2.6 or eariler | 1.1.0 | 
-| 2.7, 3.0 later | 1.2.0 |
-
+|  Ruby Version  | Rails Verision | Service Caller Version |
+| - | - | - |
+| 2.6 or eariler | 5.x | 1.1.0 | 
+| 2.7, 3.0 later | 6.x | 1.2.0 |
 
 ## Example Guide
 
