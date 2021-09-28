@@ -16,7 +16,7 @@ require 'service_caller'
 | Ruby Version | Service Caller Version |
 | - | - |
 | 2.6 or eariler | 1.1.0 | 
-| 3.0 later | 1.2.0 |
+| 2.7, 3.0 later | 1.2.0 |
 
 
 ## Example Guide
