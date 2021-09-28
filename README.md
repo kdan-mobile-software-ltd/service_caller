@@ -8,7 +8,7 @@
 gem 'service_caller', '~> 1.2.0'
 ```
 
-2. Then, in your project directory.
+2. Then, in your project directory, install the gem manually from your shell, run:
 
 ``` bash
 # Download and install
@@ -30,7 +30,7 @@ $ bundle update service_caller
 | 2.6 or eariler | 5.x | 1.1.0 | 
 | 2.7, 3.0 later | 6.x | 1.2.0 |
 
-## Example Guide
+## Usage
 
 * define service & inherit from `ServiceCaller`
   * **For ruby 2.6 or earlier** (ruby 2.7 may show deprecated warning message)
@@ -38,10 +38,13 @@ $ bundle update service_caller
 class [Custom Service] < ServiceCaller
   def initialize(*args)
     ...
+    @a = a
+    @b = b
   end
 
   def call
     ...
+    @result = "Your service result which you want to return"
   end
 end
 ```
@@ -50,6 +53,8 @@ end
 class [Custom Service] < ServiceCaller
   def initialize(*args, **hsh)
     ...
+    @a = a
+    @b = b
   end
 
   def call
@@ -85,11 +90,11 @@ end
   service.error
 ```
 
-### Examples
+### Example
 
 ``` ruby
 class CalBmi < ServiceCaller
-  def initialize(member_name='william', height: 1.55, weight: 52)
+  def initialize(member_name, height: 1.55, weight: 52)
     @member_name = member_name
     @height = height
     @weight = weight
@@ -97,6 +102,7 @@ class CalBmi < ServiceCaller
 
   def call
     bmi = calculate_bmi
+    raise ServiceError.new(:member_name_not_found, error_msg: 'not enter the name') if @member_name.blank?
     @result = "#{@member_name}'s BMI is #{bmi}"
   end
 
@@ -111,8 +117,13 @@ end
 # Call the BMI Service
 
 body_insight = {height: 1.80, weight: 73}
-bmi = Cal_Bmi.call('william', **body_insight)
+bmi = CalBmi.call('william', **body_insight)
 
 bmi.success? # it will show the caller is success or failed
 bmi.result   # it will show you => william's BMI is 22.53
+
+bmi = CalBmi.call('', **body_insight)
+bmi.error    # if failed, the service will raise the custom error => #<ServiceError: member_name_not_found>
+bmi.error.key # :member_name_not_found
+bmi.error.error_obj #  {:error_msg=>"not enter the name"}
 ```
