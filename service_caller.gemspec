@@ -14,5 +14,5 @@ Gem::Specification.new do |s|
   s.rdoc_options     = ['--charset=UTF-8']
   s.require_path     = "lib"
 
-  s.required_ruby_version = '>= 2.5.1'
+  s.required_ruby_version = '>= 3.0.0'
 end
