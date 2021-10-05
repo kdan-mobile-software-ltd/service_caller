@@ -4,8 +4,10 @@
 1. Add `service_caller` in your app's `Gemfile`.
 
 ``` ruby
-# ruby version is 2.7 or 3
+# ruby version 2.7+ or later
 gem 'service_caller', '~> 1.2.0'
+# ruby version 2.6+ or eariler
+gem 'service_caller', '~> 1.1.0'
 ```
 
 2. Then, in your project directory, install the gem manually from your shell, run:
