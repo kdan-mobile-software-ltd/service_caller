@@ -3,7 +3,7 @@ stages:
 
 to_gem:
   stage: publish
-  image: ruby:2.6.6
+  image: ruby:3.0.2
   script:
     - mkdir -p ~/.gem
     - touch ~/.gem/credentials

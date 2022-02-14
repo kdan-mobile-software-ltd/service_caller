@@ -3,8 +3,8 @@ module ServiceExtend
     attr_reader :error, :result
 
     module ClassMethods
-      def call(*args)
-        service = new(*args)
+      def call(*args, **hsh)
+        service = new(*args, **hsh)
         service.call
         service
       end
