@@ -8,6 +8,10 @@ Gem::Specification.new do |s|
   s.email       = 'laura34963@kdanmobile.com'
   s.homepage    = 'https://github.com/kdan-mobile-software-ltd/service_caller'
   s.license     = 'MIT'
+  s.metadata = {
+    "source_code_uri" => "https://github.com/kdan-mobile-software-ltd/service_caller",
+    "changelog_uri" => "https://github.com/kdan-mobile-software-ltd/service_caller/blob/master/CHANGELOG.md"
+  }
 
   s.files            = `git ls-files -- lib/*`.split("\n")
   s.extra_rdoc_files = [ 'README.md' ]
