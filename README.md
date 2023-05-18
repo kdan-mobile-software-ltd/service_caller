@@ -5,7 +5,7 @@
 
 ``` ruby
 # ruby version 2.7+ or later
-gem 'service_caller', '~> 1.2.0'
+gem 'service_caller', '~> 1.2.x'
 # ruby version 2.6+ or eariler
 gem 'service_caller', '~> 1.1.0'
 ```
@@ -30,7 +30,7 @@ $ bundle update service_caller
 |  Ruby Version  | Rails Verision | Service Caller Version |
 | - | - | - |
 | 2.6 or eariler | 5.x | 1.1.0 | 
-| 2.7, 3.0 later | 6.x | 1.2.0 |
+| 2.7, 3.0 later | 6.x | 1.2.x |
 
 ## Usage
 
