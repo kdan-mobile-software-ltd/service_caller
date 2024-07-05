@@ -11,6 +11,8 @@ stages:
 to_gem:
   stage: publish
   image: ruby:3.0.2
+  tags:
+    - arm64
   script:
     - mkdir -p ~/.gem
     - touch ~/.gem/credentials
