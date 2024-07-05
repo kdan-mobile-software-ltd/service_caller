@@ -1,9 +1,18 @@
+include:
+  - project: "kdanmobile/deployment/cluster-cicd-config"
+    ref: master
+    file: "/gitlab-ci/node-brakeman-sast-upload.yaml"
+
 stages:
+  - test
+  - sast_upload
   - publish
 
 to_gem:
   stage: publish
   image: ruby:3.0.2
+  tags:
+    - arm64
   script:
     - mkdir -p ~/.gem
     - touch ~/.gem/credentials
