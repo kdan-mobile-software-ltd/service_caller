@@ -10,7 +10,7 @@ stages:
 
 to_gem:
   stage: publish
-  image: ruby:3.0.2
+  image: ruby:3.4.5
   tags:
     - arm64
   script:
@@ -23,4 +23,4 @@ to_gem:
     - gem build service_caller.gemspec
     - gem push $GEM_NAME
   only:
-    - master
+    - /release-\d+\.\d+\.\d+(\.\d+)?/
