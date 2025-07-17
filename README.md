@@ -79,10 +79,10 @@ end
   service = [Custom Service].call(*args, **hsh)
 ```
 
-* Simply check if success.
+* Simply check if service is success or failed.
 ```ruby
-  service.success?   # true / false
-  service.failed?    # true / false
+  service.success?   # success => true / failed => false
+  service.failed?    # failed => true / success => false
 ```
 
 * Get success result information if service is success.
