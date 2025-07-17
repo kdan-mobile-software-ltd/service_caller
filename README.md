@@ -34,8 +34,10 @@ $ bundle update service_caller
 
 ## Usage
 
-* Define service & inherit from `ServiceCaller`.
-  * **For ruby 2.6 or earlier** (ruby 2.7 may show deprecated warning message)
+### Define service & inherit from `ServiceCaller`.
+
+* **For ruby 2.6 or earlier** (ruby 2.7 may show deprecated warning message)
+
 ```ruby
 class [Custom Service] < ServiceCaller
   def initialize(*args)
@@ -50,7 +52,8 @@ class [Custom Service] < ServiceCaller
   end
 end
 ```
-  * **For ruby 2.7 or ruby 3.0**
+* **For ruby 2.7 or ruby 3.0**
+
 ``` ruby
 class [Custom Service] < ServiceCaller
   def initialize(*args, **hsh)
