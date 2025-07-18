@@ -4,7 +4,7 @@
 1. Add `service_caller` in your app's `Gemfile`.
 
 ``` ruby
-# ruby version 2.7+ or later
+# ruby version 2.7+, 3.0+ or later
 gem 'service_caller', '~> 1.2.x'
 # ruby version 2.6+ or eariler
 gem 'service_caller', '~> 1.1.0'
@@ -30,12 +30,14 @@ $ bundle update service_caller
 |  Ruby Version  | Rails Verision | Service Caller Version |
 | - | - | - |
 | 2.6 or eariler | 5.x | 1.1.0 | 
-| 2.7, 3.0 later | 6.x | 1.2.x |
+| 2.7, 3.0+ or later | 6.x / 7.x / 8.x | 1.2.x |
 
 ## Usage
 
-* define service & inherit from `ServiceCaller`
-  * **For ruby 2.6 or earlier** (ruby 2.7 may show deprecated warning message)
+### Define service & inherit from `ServiceCaller`.
+
+* **For ruby 2.6 or earlier** (ruby 2.7 may show deprecated warning message)
+
 ```ruby
 class [Custom Service] < ServiceCaller
   def initialize(*args)
@@ -50,7 +52,8 @@ class [Custom Service] < ServiceCaller
   end
 end
 ```
-  * **For ruby 2.7 or ruby 3.0**
+* **For ruby 2.7 or ruby 3.0**
+
 ``` ruby
 class [Custom Service] < ServiceCaller
   def initialize(*args, **hsh)
@@ -76,18 +79,18 @@ end
   service = [Custom Service].call(*args, **hsh)
 ```
 
-* check if success
+* Simply check if service is success or failed.
 ```ruby
-  service.success?
-  service.failed?
+  service.success?   # success => true / failed => false
+  service.failed?    # failed => true / success => false
 ```
 
-* get success result if success
+* Get success result information if service is success.
 ```ruby
   service.result
 ```
 
-* get error if failed
+* Get error information if service is failed.
 ```ruby
   service.error
 ```
@@ -118,14 +121,14 @@ end
 
 # Call the BMI Service
 
-body_insight = {height: 1.80, weight: 73}
+body_insight = { height: 1.80, weight: 73 }
 bmi = CalBmi.call('william', **body_insight)
 
 bmi.success? # it will show the caller is success or failed
 bmi.result   # it will show you => william's BMI is 22.53
 
 bmi = CalBmi.call('', **body_insight)
-bmi.error    # if failed, the service will raise the custom error => #<ServiceError: member_name_not_found>
-bmi.error.key # :member_name_not_found
-bmi.error.error_obj #  {:error_msg=>"not enter the name"}
+bmi.error           # if failed, the service will raise the custom error => #<ServiceError: member_name_not_found>
+bmi.error.key       # :member_name_not_found
+bmi.error.error_obj # {:error_msg=>"not enter the name"}
 ```
