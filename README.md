@@ -34,6 +34,18 @@ $ bundle update service_caller
 
 ## Usage
 
+### Configuration
+
+You can configure the service extend to hide the exception message and backtrace for sensitive data leakage in production environment.
+
+```ruby
+ServiceExtend.configure do |config|
+  config.hide_exception_message = true
+  config.hide_exception_message_replacement = 'Hidden Error Message'
+  config.hide_exception_backtrace = true
+end
+```
+
 ### Define service & inherit from `ServiceCaller`.
 
 * **For ruby 2.6 or earlier** (ruby 2.7 may show deprecated warning message)
